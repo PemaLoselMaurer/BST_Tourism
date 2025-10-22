@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat, Lora } from "next/font/google";
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Topbar from "@/components/Topbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +13,21 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Typography: Headings (Montserrat) and Body (Lora)
+const montserrat = Montserrat({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+const lora = Lora({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,10 +42,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Navbar />
-        <main className="container">{children}</main>
-        <Footer />
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${lora.variable}`}
+      >
+        <div className="app-layout">
+          <aside className="sidebar">
+            <Navbar />
+          </aside>
+          <div className="app-main">
+            <Topbar />
+            <main className="content container">{children}</main>
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );

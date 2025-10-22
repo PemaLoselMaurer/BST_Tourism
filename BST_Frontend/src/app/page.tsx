@@ -1,5 +1,1 @@
-import HeroSection from "@/components/HeroSection";
-
-export default function Home() {
-  return <HeroSection />;
-}
+export { default } from "./Homepage/homepage";

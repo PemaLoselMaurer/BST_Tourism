@@ -8,7 +8,9 @@ export default function ChatbotWindow() {
     <div className="chatbot">
       <div className="messages">
         {messages.map((m, i) => (
-          <div key={i} className="message">{m}</div>
+          <div key={i} className="message">
+            {m}
+          </div>
         ))}
       </div>
       <form
@@ -20,7 +22,11 @@ export default function ChatbotWindow() {
           setInput("");
         }}
       >
-        <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask about Bhutan..." />
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Ask about Bhutan..."
+        />
         <button type="submit">Send</button>
       </form>
     </div>
