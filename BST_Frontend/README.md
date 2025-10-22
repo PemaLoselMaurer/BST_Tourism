@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## BST_Frontend (Next.js 15 + TS)
 
-## Getting Started
+### What you need to install
 
-First, run the development server:
+1. Node.js 20 LTS (recommended)
+   - Includes npm
+2. Git (optional, for version control)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Check versions (Windows PowerShell):
+
+```powershell
+node -v
+npm -v
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install project dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+cd .\BST_Frontend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm install
+npm install lucide-react@latest
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This installs:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- next@15, react@19, react-dom@19
+- lucide-react (icons)
+- typescript, eslint, @types/\* (dev)
 
-## Deploy on Vercel
+Fonts: Montserrat (headings) and Lora (body) are loaded with `next/font` — no manual install needed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Run the app
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```powershell
+npm run dev
+```
+
+Open http://localhost:3000
+
+### Build and start (production)
+
+```powershell
+npm run build
+npm run start
+```
+
+### Project structure highlights
+
+- `src/app/layout.tsx`: Global layout (sidebar, topbar, footer)
+- `src/components/`: Navbar, Topbar, Footer, etc.
+- `src/styles/variables.css`: Color tokens (primary/accent/background)
+- `src/styles/globals.css`: Global styles and responsive rules
+
+### Troubleshooting
+
+- If `npm run dev` fails, ensure Node >= 18.18 (prefer 20 LTS).
+- Delete `node_modules` and `package-lock.json`, then reinstall:
+
+```powershell
+rimraf node_modules package-lock.json; npm install
+```
