@@ -11,4 +11,14 @@
   --max-width: 1100px;
   /* Shared heights */
   --bar-height: 56px; /* topbar + sidebar brand */
+
+  /* Responsive Typography (clamp) */
+  --fs-body: clamp(0.95rem, 0.28vw + 0.9rem, 1rem);
+  --fs-title: clamp(1rem, 0.6vw + 0.95rem, 1.25rem);
+  --fs-h1: clamp(1.75rem, 1.2vw + 1.4rem, 2.5rem);
+  --fs-h2: clamp(1.5rem, 1vw + 1.1rem, 2rem);
+  --fs-h3: clamp(1.25rem, 0.8vw + 1rem, 1.5rem);
+  --fs-h4: clamp(1.125rem, 0.6vw + 0.95rem, 1.25rem);
+  --fs-nav: clamp(0.9rem, 0.25vw + 0.85rem, 1rem);
+  --fs-footer: clamp(0.75rem, 0.22vw + 0.7rem, 0.875rem);
 }
